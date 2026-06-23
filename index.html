@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tejada Fit</title>
+  <meta name="theme-color" content="#ccecff">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="tejada-fit-widget" class="tfw tfw-locked">
+
+  <section class="tfw-auth">
+    <div class="tfw-auth-card">
+      <div class="tfw-logo">TF</div>
+      <div>
+        <p class="tfw-kicker">Tejada Fit</p>
+        <h1>Acesse seu plano</h1>
+        <p class="tfw-muted">Cadastro simples para alunos. O admin controla treinos, dietas, feed e vídeos.</p>
+      </div>
+      <div class="tfw-auth-tabs">
+        <button class="tfw-auth-tab tfw-active" type="button" data-auth="login">Entrar</button>
+        <button class="tfw-auth-tab" type="button" data-auth="register">Cadastrar</button>
+      </div>
+      <form class="tfw-form tfw-active" data-form="login">
+        <label>Email <input name="email" type="email" required></label>
+        <label>Senha <input name="password" type="password" required></label>
+        <button class="tfw-primary" type="submit">Entrar</button>
+      </form>
+      <form class="tfw-form" data-form="register">
+        <label>Nome completo <input name="full_name" type="text" required></label>
+        <label>Email <input name="email" type="email" required></label>
+        <label>Senha <input name="password" type="password" minlength="4" required></label>
+        <button class="tfw-primary" type="submit">Criar conta</button>
+      </form>
+      <p class="tfw-muted">Admin inicial: admin@tejada.fit / admin123</p>
+      <p class="tfw-muted" data-message></p>
+    </div>
+  </section>
+
+  <main class="tfw-app">
+    <aside class="tfw-side">
+      <div class="tfw-logo">TF</div>
+      <div>
+        <p class="tfw-kicker">Tejada Fit</p>
+        <h2>Plano de treino e dieta</h2>
+      </div>
+      <div class="tfw-student">
+        <div class="tfw-avatar" data-initials>RM</div>
+        <div>
+          <strong data-name>Rafael Mendes</strong>
+          <span data-subtitle>Aluno · Plano ativo</span>
+        </div>
+      </div>
+      <div class="tfw-stats">
+        <div><strong>82kg</strong><span>Peso atual</span></div>
+        <div><strong>6/7</strong><span>Dias ativos</span></div>
+        <div><strong>91%</strong><span>Dieta</span></div>
+      </div>
+    </aside>
+
+    <section class="tfw-phone">
+      <header class="tfw-top">
+        <div>
+          <p class="tfw-kicker" data-kicker>Bom treino</p>
+          <h2 data-title>Início</h2>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="tfw-icon" type="button" aria-label="Notificações">
+            <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg>
+          </button>
+          <button class="tfw-icon" type="button" data-logout aria-label="Sair">
+            <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="tfw-scroll">
+        <article class="tfw-panel tfw-active" data-panel="home">
+          <div class="tfw-hero">
+            <div>
+              <span>Check-in diário</span>
+              <strong>Treino A liberado</strong>
+              <p>Peito, ombro e tríceps com ajuste de carga progressiva.</p>
+            </div>
+            <button class="tfw-primary" type="button" data-jump="workout">Abrir</button>
+          </div>
+          <div class="tfw-section"><h3>Atualizações</h3><span>Feed do Tejada</span></div>
+          <div class="tfw-list" data-feed></div>
+        </article>
+
+        <article class="tfw-panel" data-panel="diet">
+          <div class="tfw-macros">
+            <div><strong>2.650</strong><span>kcal</span></div>
+            <div><strong>210g</strong><span>proteína</span></div>
+            <div><strong>280g</strong><span>carbo</span></div>
+            <div><strong>70g</strong><span>gordura</span></div>
+          </div>
+          <div class="tfw-section"><h3>Plano alimentar</h3><span>Envie uma foto por refeição</span></div>
+          <div class="tfw-list" data-meals></div>
+        </article>
+
+        <article class="tfw-panel" data-panel="workout">
+          <div class="tfw-days">
+            <button class="tfw-day-tab tfw-active" type="button" data-day="A">A</button>
+            <button class="tfw-day-tab" type="button" data-day="B">B</button>
+            <button class="tfw-day-tab" type="button" data-day="C">C</button>
+            <button class="tfw-day-tab" type="button" data-day="D">D</button>
+          </div>
+          <div class="tfw-workout-summary">
+            <div><span data-workout-label>Treino A</span><strong data-workout-title>Peito, ombro e tríceps</strong></div>
+            <button class="tfw-primary" type="button" data-finish>Concluir</button>
+          </div>
+          <div class="tfw-section"><h3>Exercícios</h3><span>Toque para ver o vídeo</span></div>
+          <div class="tfw-list" data-exercises></div>
+        </article>
+
+        <article class="tfw-panel" data-panel="profile">
+          <div class="tfw-profile-head">
+            <div class="tfw-avatar" data-initials>RM</div>
+            <div><h3 data-name>Rafael Mendes</h3><p data-subtitle>Aluno · Plano ativo</p></div>
+          </div>
+          <div class="tfw-profile-actions">
+            <button class="tfw-profile-button" type="button"><svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>Editar perfil</button>
+            <button class="tfw-profile-button" type="button"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>Evolução</button>
+            <button class="tfw-profile-button" type="button"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path></svg>Falar com Tejada</button>
+          </div>
+          <div class="tfw-section"><h3>Dados</h3><span>Visão do aluno</span></div>
+          <div class="tfw-data">
+            <div><span>Altura</span><strong>1,78m</strong></div>
+            <div><span>Peso inicial</span><strong>87kg</strong></div>
+            <div><span>Peso atual</span><strong>82kg</strong></div>
+            <div><span>Próxima avaliação</span><strong>28/06</strong></div>
+          </div>
+        </article>
+
+        <article class="tfw-panel" data-panel="admin">
+          <div class="tfw-section"><h3>Painel admin</h3><span>Conteúdo do Tejada</span></div>
+          <form class="tfw-admin-form" data-admin-form="feed">
+            <h4>Novo post no feed</h4>
+            <input name="title" type="text" placeholder="Título" required>
+            <textarea name="body" placeholder="Mensagem para os alunos" required></textarea>
+            <button class="tfw-primary" type="submit">Publicar</button>
+          </form>
+          <form class="tfw-admin-form" data-admin-form="meal">
+            <h4>Adicionar refeição</h4>
+            <input name="name" type="text" placeholder="Nome da refeição" required>
+            <input name="time" type="text" placeholder="Horário" required>
+            <textarea name="items" placeholder="Alimentos e quantidades" required></textarea>
+            <button class="tfw-primary" type="submit">Salvar dieta</button>
+          </form>
+          <form class="tfw-admin-form" data-admin-form="exercise">
+            <h4>Adicionar exercício</h4>
+            <select name="day" required><option>A</option><option>B</option><option>C</option><option>D</option></select>
+            <input name="name" type="text" placeholder="Nome do exercício" required>
+            <input name="meta" type="text" placeholder="Séries, reps e intervalo" required>
+            <input name="video" type="url" placeholder="URL do vídeo no WordPress, Vimeo ou YouTube">
+            <button class="tfw-primary" type="submit">Salvar exercício</button>
+          </form>
+          <form class="tfw-admin-form" data-admin-form="video">
+            <h4>Anexar vídeo a exercício existente</h4>
+            <select name="exercise" data-video-select required></select>
+            <input name="video" type="url" placeholder="Cole a URL do vídeo" required>
+            <button class="tfw-primary" type="submit">Anexar vídeo</button>
+          </form>
+          <p class="tfw-muted" data-admin-message></p>
+        </article>
+      </section>
+
+      <nav class="tfw-nav">
+        <button class="tfw-nav-item tfw-active" type="button" data-tab="home"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg><span>Início</span></button>
+        <button class="tfw-nav-item" type="button" data-tab="diet"><svg viewBox="0 0 24 24"><path d="M4 11h16"></path><path d="M5 11a7 7 0 0 0 14 0"></path><path d="M8 11V7a4 4 0 0 1 8 0v4"></path><path d="M6 20h12"></path></svg><span>Dieta</span></button>
+        <button class="tfw-nav-item" type="button" data-tab="workout"><svg viewBox="0 0 24 24"><path d="M6 7v10"></path><path d="M18 7v10"></path><path d="M3 9v6"></path><path d="M21 9v6"></path><path d="M6 12h12"></path></svg><span>Treino</span></button>
+        <button class="tfw-nav-item" type="button" data-tab="profile"><svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"></path><circle cx="12" cy="7" r="4"></circle></svg><span>Perfil</span></button>
+        <button class="tfw-nav-item tfw-admin-only" type="button" data-tab="admin"><svg viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5Z"></path><path d="M19.4 15a1.8 1.8 0 0 0 .3 2l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.8 1.8 0 0 0-2-.3 1.8 1.8 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.8 1.8 0 0 0-1-1.6 1.8 1.8 0 0 0-2 .3l-.1.1A2 2 0 1 1 4 16.9l.1-.1a1.8 1.8 0 0 0 .3-2 1.8 1.8 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.8 1.8 0 0 0 1.6-1 1.8 1.8 0 0 0-.3-2L4.3 6.7A2 2 0 1 1 7.1 4l.1.1a1.8 1.8 0 0 0 2 .3h.1A1.8 1.8 0 0 0 10.9 3V3a2 2 0 1 1 4 0v.1a1.8 1.8 0 0 0 1 1.6 1.8 1.8 0 0 0 2-.3l.1-.1A2 2 0 1 1 20.8 7l-.1.1a1.8 1.8 0 0 0-.3 2v.1A1.8 1.8 0 0 0 22 10.9h.1a2 2 0 1 1 0 4H22a1.8 1.8 0 0 0-1.6.1Z"></path></svg><span>Admin</span></button>
+      </nav>
+    </section>
+  </main>
+
+  <div class="tfw-modal" data-modal>
+    <div class="tfw-modal-card">
+      <button class="tfw-icon tfw-close" type="button" data-close aria-label="Fechar vídeo">
+        <svg viewBox="0 0 24 24"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="tfw-video-box" data-video-box>
+        <svg viewBox="0 0 24 24"><polygon points="9 7 18 12 9 17 9 7"></polygon></svg>
+      </div>
+      <p class="tfw-kicker">Vídeo do Tejada</p>
+      <h3 data-modal-title>Execução do exercício</h3>
+      <p class="tfw-muted" data-modal-copy>Aqui entra o vídeo anexado pelo admin.</p>
+    </div>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
